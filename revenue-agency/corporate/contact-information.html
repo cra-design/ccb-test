@@ -24,6 +24,118 @@ notedlinks:
     link: "https://cra-design.github.io/ccb-test2/index.html"
 ---
 
+<style>
+
+/* style this like call-to-action button */
+.btn-default {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  padding: .58em 1em;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* shared components */
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #eee;
+  border: 2px solid #333;
+}
+/* custom checkboxes */
+
+/* for checks, container */
+.container-checks {
+  display: block;
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* hide default checkbox */
+.container-checks input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Show when checkbox is focus with keyboard */
+.container-checks input:focus-visible ~ .checkmark {
+    background-color: #ccc;
+    border-width: 4px;
+}
+.container-checks input:focus-visible ~ .checkmark:after {
+    left: 12px;
+    top: 3px;
+}
+/* mouse-over, grey */
+.container-checks:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container-checks input:checked ~ .checkmark {
+  background-color: #318000;
+}
+/* create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* show the checkmark when checked */
+.container-checks input:checked ~ .checkmark:after {
+  display: block;
+}
+/* style the checkmark/indicator */
+.container-checks .checkmark:after {
+  left: 14px;
+  top: 5px;
+  width: 10px;
+  height: 22px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* extend zebra strips to whole container */
+
+.edge-color {
+  background-color: #f0f0f0;
+  display: inline-block;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 15px;
+}
+
+/* extend zebra strips to whole container in a data table */
+
+.dataTables_wrapper {
+  margin-left: -22px;
+  margin-right: -22px;
+}
+
+.dataTables_filter {
+  margin-left: 8px;
+}
+</style>
+
 <div class="container">
     <h1 property="name" id="wb-cont" dir="ltr" class="mrgn-bttm-lg">Contact the Canada Revenue Agency (CRA)</h1>
     <section data-ajax-replace="https://www.canada.ca/content/dam/cra-arc/includes/chatbot.txt#eng"></section>
@@ -592,8 +704,8 @@ notedlinks:
         </div>
     </div>
     <!-- <div class="alert alert-warning">
-		   <p>Due to technical difficulties, the wait times are currently unavailable.</p>
-		  </div>	-->
+           <p>Due to technical difficulties, the wait times are currently unavailable.</p>
+          </div>    -->
     <h3>Step 2. Find the phone number you need to call</h3>
     <section data-ajax-replace="https://www.canada.ca/content/dam/cra-arc/includes/eservices-outage.txt#contact-step2-en"></section>
     <div class="alert alert-warning">
@@ -613,7 +725,7 @@ notedlinks:
                 <thead>
                     <tr>
                         <!-- Adjusting the column here in line because nothing else works. Try to find a fix for this since it's not consistent across browsers.
-		  The datatable columns option doesnt seem to work at all and neither does setting col classes on the th. -->
+          The datatable columns option doesnt seem to work at all and neither does setting col classes on the th. -->
                         <th scope="col" class="col-sm-5 col-md-5">Reason for your call</th>
                         <th scope="col" class="col-sm-3 col-md-3">Phone number</th>
                         <th scope="col" class="col-sm-4 col-md-4">Hours of service<br /><span>(in local time unless noted)</span></th>
@@ -728,7 +840,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li> //-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li> //-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -803,7 +915,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li> //-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li> //-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -875,8 +987,8 @@ notedlinks:
                                         ><span class="hidden-xs hidden-sm">1-800-463-4421</span></strong
                                     >
                                     <!--ul class="fa-ul lst-spcd p-0">
-		   <li><span class="fa-li far fa-clock fa-lg"></span> <span class="small">No wait times</span></li>
-		   </ul-->
+           <li><span class="fa-li far fa-clock fa-lg"></span> <span class="small">No wait times</span></li>
+           </ul-->
                                 </li>
                             </ul>
                         </td>
@@ -1033,8 +1145,8 @@ notedlinks:
                                         ><span class="hidden-xs hidden-sm">1-855-330-3305</span></strong
                                     >
                                     <!--ul class="fa-ul lst-spcd p-0">
-		   <li><span class="fa-li far fa-clock fa-lg"></span> <span class="small">No wait times</span></li>
-		   </ul-->
+           <li><span class="fa-li far fa-clock fa-lg"></span> <span class="small">No wait times</span></li>
+           </ul-->
                                 </li>
                                 <!--Hidden until a time when available again -->
                                 <li><a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information/online-chat.html">Online chat service</a></li>
@@ -1318,7 +1430,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-			<li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+            <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -1466,7 +1578,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -1541,7 +1653,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -1620,7 +1732,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -1699,7 +1811,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -1833,7 +1945,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -2142,7 +2254,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -2572,7 +2684,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-		   <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+           <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -2627,7 +2739,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-			<li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+            <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -2707,7 +2819,7 @@ notedlinks:
                                     >
                                     <ul class="fa-ul lst-spcd p-0">
                                         <!--Hidden until a time when available again
-			<li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
+            <li><span class="fa-li fas fa-phone-volume fa-lg"></span> <a href="/content/canadasite/en/revenue-agency/corporate/contact-information/automated-callback-service.html">Automated callback service may be available</a></li>//-->
                                         <li>
                                             <span class="fa-li far fa-clock fa-lg"></span>
                                             <div class="small nowrap">
@@ -3853,7 +3965,7 @@ notedlinks:
                             <ul id="bsn-ph-23" class="list-unstyled lst-spcd text-left p-0 mrgn-rght-md">
                                 <li><a href="https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-businesses/efile-electronic-filers/efile-helpdesk-support-t1-returns.html">Contact the EFILE Helpdesk</a></li>
                                 <!--<li>Or get help from a dedicated volunteer:<br />
-			<strong class="nowrap"><a href="tel:18663983488" class="hidden-md hidden-lg no-undrln">1-866-398-3488<span class="wb-inv"> (opens up phone application)</span></a><span class="hidden-xs hidden-sm">1-866-398-3488</span></strong></li>//-->
+            <strong class="nowrap"><a href="tel:18663983488" class="hidden-md hidden-lg no-undrln">1-866-398-3488<span class="wb-inv"> (opens up phone application)</span></a><span class="hidden-xs hidden-sm">1-866-398-3488</span></strong></li>//-->
                             </ul>
                         </td>
                         <td data-label="Hours:">
@@ -4898,33 +5010,33 @@ notedlinks:
 </div>
 <charlie></charlie>
 <!--<section id="interac" class="mfp-hide modal-dialog modal-content overlay-def">
-	<header class="modal-header">
-	 <h2 class="modal-title"><em>Interac</em>® document verification service</h2>
-	</header>
-	<div class="modal-body">
-	 <p><em>Interac</em> document verification service is an alternative way to validate your identity. This secure method gives you immediate access to CRA sign-in services.</p>
-	 <p>To use this service, you must:</p>
-	 <ul>
-	  <li>Be 16&nbsp;years of age or older</li>
-	  <li>Have an accepted government-issued photo identification</li>
-	  <li>Have a mobile device with a working camera</li>
-	 </ul>
-	 <p><strong>Gather your identification documents</strong></p>
-	 <p>The following original government-issued identification documents are accepted:</p>
-	 <ul>
-	  <li>Canadian passport</li>
-	  <li>Canadian driver's license</li>
-	  <li>Provincial/Territorial photo ID card</li>
-	 </ul>
-	 <p>We do not accept:</p>
-	 <ul>
-	  <li>Provincial health cards</li>
-	  <li>Documents that have been reported as lost or stolen</li>
-	  <li>Expired or damaged identification documents</li>
-	  <li>Photocopies of identification document</li>
-	  <li>Pictures of yourself that were not taken in real-time</li>
-	 </ul>
-	</div>
+    <header class="modal-header">
+     <h2 class="modal-title"><em>Interac</em>® document verification service</h2>
+    </header>
+    <div class="modal-body">
+     <p><em>Interac</em> document verification service is an alternative way to validate your identity. This secure method gives you immediate access to CRA sign-in services.</p>
+     <p>To use this service, you must:</p>
+     <ul>
+      <li>Be 16&nbsp;years of age or older</li>
+      <li>Have an accepted government-issued photo identification</li>
+      <li>Have a mobile device with a working camera</li>
+     </ul>
+     <p><strong>Gather your identification documents</strong></p>
+     <p>The following original government-issued identification documents are accepted:</p>
+     <ul>
+      <li>Canadian passport</li>
+      <li>Canadian driver's license</li>
+      <li>Provincial/Territorial photo ID card</li>
+     </ul>
+     <p>We do not accept:</p>
+     <ul>
+      <li>Provincial health cards</li>
+      <li>Documents that have been reported as lost or stolen</li>
+      <li>Expired or damaged identification documents</li>
+      <li>Photocopies of identification document</li>
+      <li>Pictures of yourself that were not taken in real-time</li>
+     </ul>
+    </div>
    </section>-->
 <!--Start - Wait time modals//-->
 <section id="waittime-lbx" class="mfp-hide modal-dialog modal-content overlay-def">
