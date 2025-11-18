@@ -23,7 +23,7 @@ en: "Canada Revenue Agency"
 fr: "Agence du revenu du Canada"
 
 # Custom settings
-developerOptions: true
+developerOptions: false
 devOptionsLocStore: "gitCRATemplateDevOptions"
 exitByURL: false
 exitPage:
@@ -68,3 +68,4 @@ defaults:
         - https://cra-design.github.io/core-prototype/source/css/testing-banner.css
       script:
         - https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/m%C3%A9li-m%C3%A9lo/2025-12-mille-iles.js
+
