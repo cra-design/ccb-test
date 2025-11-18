@@ -4,7 +4,7 @@
 
 GitHub Pages: [https://cra-design.github.io/ccb-test](https://cra-design.github.io/ccb-test)
 
-HTML Pages: [Tax credits and benefits for individuals](https://cra-design.github.io/ccb/services/taxes/child-and-family-benefits.html)
+HTML Pages: [Canada Revenue Agency (CRA)](https://cra-design.github.io/ccb/revenue-agency.html)
 
 - [Canada child benefit (CCB)](https://cra-design.github.io/ccb-test/revenue-agency/services/child-family-benefits/canada-child-benefit-overview.html)
 - [GST/HST credit](https://cra-design.github.io/ccb-test/revenue-agency/services/child-family-benefits/gst-hst-credit.html)
