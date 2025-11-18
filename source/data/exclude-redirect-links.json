@@ -2,6 +2,10 @@
   {
     "origin": "https://www.canada.ca/en/revenue-agency.html",
     "destination": "/ccb-test/revenue-agency.html"
+  },
+  {
+    "origin": "https://www.canada.ca/en/revenue-agency/corporate/contact-information.html",
+    "destination": "/ccb-test/revenue-agency/corporate/contact-information.html"
   },  
   {
     "origin": "https://www.canada.ca/en/revenue-agency/corporate/contact-information/check-cra-processing-times.html",
